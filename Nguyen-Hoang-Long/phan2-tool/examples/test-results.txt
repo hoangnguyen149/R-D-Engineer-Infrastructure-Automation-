@@ -1,0 +1,26 @@
+test_bad_root (test_cluster_balance.PlannerTests.test_bad_root) ... ok
+test_cli_invalid_json (test_cluster_balance.PlannerTests.test_cli_invalid_json) ... ok
+test_cli_missing_file (test_cluster_balance.PlannerTests.test_cli_missing_file) ... ok
+test_cpu_formula (test_cluster_balance.PlannerTests.test_cpu_formula) ... ok
+test_cpu_migration (test_cluster_balance.PlannerTests.test_cpu_migration) ... ok
+test_deterministic (test_cluster_balance.PlannerTests.test_deterministic) ... ok
+test_duplicate_all_excluded (test_cluster_balance.PlannerTests.test_duplicate_all_excluded) ... ok
+test_each_step_safe_in_lab (test_cluster_balance.PlannerTests.test_each_step_safe_in_lab) ... ok
+test_exact_threshold_not_overloaded (test_cluster_balance.PlannerTests.test_exact_threshold_not_overloaded) ... ok
+test_invalid_fields (test_cluster_balance.PlannerTests.test_invalid_fields) ... ok
+test_invalid_nodes (test_cluster_balance.PlannerTests.test_invalid_nodes) ... ok
+test_missing_field (test_cluster_balance.PlannerTests.test_missing_field) ... ok
+test_no_capacity_does_not_claim_success (test_cluster_balance.PlannerTests.test_no_capacity_does_not_claim_success) ... ok
+test_offline_target_never_used (test_cluster_balance.PlannerTests.test_offline_target_never_used) ... ok
+test_original_anomalies (test_cluster_balance.PlannerTests.test_original_anomalies) ... ok
+test_overcommit_migration (test_cluster_balance.PlannerTests.test_overcommit_migration) ... ok
+test_ram_migration_and_conservation (test_cluster_balance.PlannerTests.test_ram_migration_and_conservation) ... ok
+test_running_on_offline_blocks (test_cluster_balance.PlannerTests.test_running_on_offline_blocks) ... ok
+test_stopped_excluded_running_overcommit (test_cluster_balance.PlannerTests.test_stopped_excluded_running_overcommit) ... ok
+test_threshold_validation (test_cluster_balance.PlannerTests.test_threshold_validation) ... ok
+test_transient_mem_max_headroom (test_cluster_balance.PlannerTests.test_transient_mem_max_headroom) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.071s
+
+OK

@@ -1,0 +1,22 @@
+# root@web-hcm-07:~# du -xh --max-depth=1 /var | sort -h | tail
+24M	/var/cache
+14G	/var/lib
+35G	/var/backups
+38G	/var/log
+87G	/var
+
+# root@web-hcm-07:~# ls -lh /var/log/nginx/ /var/backups/
+/var/log/nginx/:
+-rw-r----- 1 www-data adm  37G Oct 20 01:33 access.log
+-rw-r----- 1 www-data adm 212M Oct 13 23:59 access.log.1
+-rw-r----- 1 www-data adm  19M Oct 13 00:00 access.log.2.gz
+-rw-r----- 1 www-data adm 641M Oct 20 02:23 error.log
+-rw-r----- 1 www-data adm 1.1M Oct 13 23:58 error.log.1
+
+/var/backups/:
+-rw-r--r-- 1 root root  19G Oct 19 01:41 sites-20261019.tar.gz
+-rw-r--r-- 1 root root  16G Oct 20 01:32 sites-20261020.tar.gz
+
+# root@web-hcm-07:~# du -sh /var/lib/mysql /home
+12G	/var/lib/mysql
+21G	/home

@@ -1,0 +1,245 @@
+{
+  "cluster": "pve-hcm-c3",
+  "collected_at": "2026-10-27T09:00:00+07:00",
+  "thresholds": {
+    "cpu": 0.8,
+    "ram": 0.85,
+    "overcommit": 4
+  },
+  "warnings": [
+    {
+      "record": "nodes[5] hcm-c3-n06",
+      "message": "mem_total must be integer bytes >= 1 GiB (sanity policy)"
+    },
+    {
+      "record": "vms[3] vmid=2067 node=hcm-c3-n02",
+      "message": "cpu_usage must be finite fraction in [0,1]"
+    },
+    {
+      "record": "vms[10] vmid=2073 node=hcm-c3-n02",
+      "message": "cpu_usage must be finite fraction in [0,1]"
+    },
+    {
+      "record": "vms[24] vmid=2001 node=hcm-c3-n01",
+      "message": "duplicate vmid: all copies excluded, no guessed owner"
+    },
+    {
+      "record": "vms[28] vmid=2065 node=hcm-c3-n02",
+      "message": "cpu_usage must be finite fraction in [0,1]"
+    },
+    {
+      "record": "vms[39] vmid=2001 node=hcm-c3-n02",
+      "message": "duplicate vmid: all copies excluded, no guessed owner"
+    },
+    {
+      "record": "vms[44] vmid=2199 node=hcm-c3-n05",
+      "message": "mem_used must be nonnegative integer bytes"
+    },
+    {
+      "record": "vms[48] vmid=2390 node=hcm-c3-n07",
+      "message": "unknown or invalid node reference"
+    }
+  ],
+  "before": {
+    "hcm-c3-n01": {
+      "status": "online",
+      "complete": false,
+      "running_vms": 13,
+      "cpu_cores_used": 52.076,
+      "ram_bytes_used": 485635735871,
+      "running_vcpus": 98,
+      "configured_vcpus_all_valid_records": 114,
+      "ratios": {
+        "cpu": 0.8136875,
+        "ram": 0.8833662575325434,
+        "overcommit": 1.53125
+      },
+      "overloaded_dimensions": [
+        "cpu",
+        "ram"
+      ],
+      "assessment": "overloaded_lower_bound"
+    },
+    "hcm-c3-n02": {
+      "status": "online",
+      "complete": false,
+      "running_vms": 10,
+      "cpu_cores_used": 20.976,
+      "ram_bytes_used": 246830675823,
+      "running_vcpus": 70,
+      "configured_vcpus_all_valid_records": 70,
+      "ratios": {
+        "cpu": 0.32775,
+        "ram": 0.4489823837920994,
+        "overcommit": 1.09375
+      },
+      "overloaded_dimensions": [],
+      "assessment": "unknown"
+    },
+    "hcm-c3-n03": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 11,
+      "cpu_cores_used": 18.240000000000002,
+      "ram_bytes_used": 193788924390,
+      "running_vcpus": 80,
+      "configured_vcpus_all_valid_records": 96,
+      "ratios": {
+        "cpu": 0.38000000000000006,
+        "ram": 0.46999999998661224,
+        "overcommit": 1.6666666666666667
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    },
+    "hcm-c3-n04": {
+      "status": "offline",
+      "complete": true,
+      "running_vms": 0,
+      "cpu_cores_used": 0,
+      "ram_bytes_used": 0,
+      "running_vcpus": 0,
+      "configured_vcpus_all_valid_records": 0,
+      "ratios": {
+        "cpu": 0.0,
+        "ram": 0.0,
+        "overcommit": 0.0
+      },
+      "overloaded_dimensions": [],
+      "assessment": "offline"
+    },
+    "hcm-c3-n05": {
+      "status": "online",
+      "complete": false,
+      "running_vms": 11,
+      "cpu_cores_used": 44.784,
+      "ram_bytes_used": 395073241709,
+      "running_vcpus": 60,
+      "configured_vcpus_all_valid_records": 76,
+      "ratios": {
+        "cpu": 0.69975,
+        "ram": 0.7186340402931819,
+        "overcommit": 0.9375
+      },
+      "overloaded_dimensions": [],
+      "assessment": "unknown"
+    },
+    "hcm-c3-n06": {
+      "status": "online",
+      "complete": false,
+      "running_vms": 12,
+      "cpu_cores_used": 9.592,
+      "ram_bytes_used": 142936511603,
+      "running_vcpus": 94,
+      "configured_vcpus_all_valid_records": 94,
+      "ratios": null,
+      "overloaded_dimensions": [],
+      "assessment": "unknown"
+    }
+  },
+  "plan": [],
+  "after": {
+    "hcm-c3-n01": {
+      "status": "online",
+      "complete": false,
+      "running_vms": 13,
+      "cpu_cores_used": 52.076,
+      "ram_bytes_used": 485635735871,
+      "running_vcpus": 98,
+      "configured_vcpus_all_valid_records": 114,
+      "ratios": {
+        "cpu": 0.8136875,
+        "ram": 0.8833662575325434,
+        "overcommit": 1.53125
+      },
+      "overloaded_dimensions": [
+        "cpu",
+        "ram"
+      ],
+      "assessment": "overloaded_lower_bound"
+    },
+    "hcm-c3-n02": {
+      "status": "online",
+      "complete": false,
+      "running_vms": 10,
+      "cpu_cores_used": 20.976,
+      "ram_bytes_used": 246830675823,
+      "running_vcpus": 70,
+      "configured_vcpus_all_valid_records": 70,
+      "ratios": {
+        "cpu": 0.32775,
+        "ram": 0.4489823837920994,
+        "overcommit": 1.09375
+      },
+      "overloaded_dimensions": [],
+      "assessment": "unknown"
+    },
+    "hcm-c3-n03": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 11,
+      "cpu_cores_used": 18.240000000000002,
+      "ram_bytes_used": 193788924390,
+      "running_vcpus": 80,
+      "configured_vcpus_all_valid_records": 96,
+      "ratios": {
+        "cpu": 0.38000000000000006,
+        "ram": 0.46999999998661224,
+        "overcommit": 1.6666666666666667
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    },
+    "hcm-c3-n04": {
+      "status": "offline",
+      "complete": true,
+      "running_vms": 0,
+      "cpu_cores_used": 0,
+      "ram_bytes_used": 0,
+      "running_vcpus": 0,
+      "configured_vcpus_all_valid_records": 0,
+      "ratios": {
+        "cpu": 0.0,
+        "ram": 0.0,
+        "overcommit": 0.0
+      },
+      "overloaded_dimensions": [],
+      "assessment": "offline"
+    },
+    "hcm-c3-n05": {
+      "status": "online",
+      "complete": false,
+      "running_vms": 11,
+      "cpu_cores_used": 44.784,
+      "ram_bytes_used": 395073241709,
+      "running_vcpus": 60,
+      "configured_vcpus_all_valid_records": 76,
+      "ratios": {
+        "cpu": 0.69975,
+        "ram": 0.7186340402931819,
+        "overcommit": 0.9375
+      },
+      "overloaded_dimensions": [],
+      "assessment": "unknown"
+    },
+    "hcm-c3-n06": {
+      "status": "online",
+      "complete": false,
+      "running_vms": 12,
+      "cpu_cores_used": 9.592,
+      "ram_bytes_used": 142936511603,
+      "running_vcpus": 94,
+      "configured_vcpus_all_valid_records": 94,
+      "ratios": null,
+      "overloaded_dimensions": [],
+      "assessment": "unknown"
+    }
+  },
+  "plan_status": "blocked_invalid_data",
+  "resource_plan_complete": false,
+  "production_ready": false,
+  "notes": [
+    "Read-only snapshot estimate, excludes host overhead and future load.",
+    "Verify fresh telemetry, storage, CPU compatibility, network, HA/affinity, locks and migration overhead before execution."
+  ]
+}

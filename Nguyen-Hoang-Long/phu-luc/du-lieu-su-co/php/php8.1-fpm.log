@@ -1,0 +1,55 @@
+[20-Oct-2026 00:12:09] NOTICE: [pool www] child 88123 exited with code 0 after 3600.001542 seconds from start
+[20-Oct-2026 01:33:06] WARNING: [pool www] child 90311 said into stderr: "PHP Warning:  session_start(): open(/var/lib/php/sessions/sess_9f2c1d, O_RDWR) failed: No space left on device (28) in /home/site42/public_html/wp-includes/class-wp-session.php on line 112"
+[20-Oct-2026 01:34:02] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:34:05] WARNING: [pool www] child 90311 said into stderr: "PHP Warning:  mysqli_real_connect(): Error while reading greeting packet. PID=90311 in /home/tintuc24h/public_html/wp-includes/class-wpdb.php on line 1982"
+[20-Oct-2026 01:34:40] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:35:21] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:35:54] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:36:32] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:37:09] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:37:50] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:37:53] WARNING: [pool www] child 90317 said into stderr: "PHP Warning:  mysqli_real_connect(): Error while reading greeting packet. PID=90317 in /home/tintuc24h/public_html/wp-includes/class-wpdb.php on line 1982"
+[20-Oct-2026 01:38:28] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:38:58] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:39:36] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:40:00] WARNING: [pool www] child 90400, script '/home/shop/public_html/index.php' (request: "GET /index.php") executing too slow (31.402114 sec), logging
+[20-Oct-2026 01:40:13] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:40:57] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:41:28] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:41:31] WARNING: [pool www] child 90323 said into stderr: "PHP Warning:  mysqli_real_connect(): Error while reading greeting packet. PID=90323 in /home/tintuc24h/public_html/wp-includes/class-wpdb.php on line 1982"
+[20-Oct-2026 01:42:08] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:42:41] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:43:23] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:43:54] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:44:34] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:45:00] WARNING: [pool www] child 90401, script '/home/shop/public_html/index.php' (request: "GET /index.php") executing too slow (31.402114 sec), logging
+[20-Oct-2026 01:45:14] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:45:17] WARNING: [pool www] child 90329 said into stderr: "PHP Warning:  mysqli_real_connect(): Error while reading greeting packet. PID=90329 in /home/tintuc24h/public_html/wp-includes/class-wpdb.php on line 1982"
+[20-Oct-2026 01:45:46] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:46:30] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:47:08] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:47:40] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:48:19] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:48:53] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:48:56] WARNING: [pool www] child 90335 said into stderr: "PHP Warning:  mysqli_real_connect(): Error while reading greeting packet. PID=90335 in /home/tintuc24h/public_html/wp-includes/class-wpdb.php on line 1982"
+[20-Oct-2026 01:49:33] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:50:00] WARNING: [pool www] child 90402, script '/home/shop/public_html/index.php' (request: "GET /index.php") executing too slow (31.402114 sec), logging
+[20-Oct-2026 01:50:10] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:50:46] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:51:23] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:52:00] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:52:35] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:52:38] WARNING: [pool www] child 90341 said into stderr: "PHP Warning:  mysqli_real_connect(): Error while reading greeting packet. PID=90341 in /home/tintuc24h/public_html/wp-includes/class-wpdb.php on line 1982"
+[20-Oct-2026 01:53:11] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:53:47] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:54:28] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:55:00] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:55:00] WARNING: [pool www] child 90403, script '/home/shop/public_html/index.php' (request: "GET /index.php") executing too slow (31.402114 sec), logging
+[20-Oct-2026 01:55:37] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:56:15] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:56:18] WARNING: [pool www] child 90347 said into stderr: "PHP Warning:  mysqli_real_connect(): Error while reading greeting packet. PID=90347 in /home/tintuc24h/public_html/wp-includes/class-wpdb.php on line 1982"
+[20-Oct-2026 01:57:00] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:57:31] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 01:58:05] WARNING: [pool www] server reached pm.max_children setting (50), consider raising it
+[20-Oct-2026 02:00:00] WARNING: [pool www] child 90404, script '/home/shop/public_html/index.php' (request: "GET /index.php") executing too slow (31.402114 sec), logging
+[20-Oct-2026 02:05:00] WARNING: [pool www] child 90405, script '/home/shop/public_html/index.php' (request: "GET /index.php") executing too slow (31.402114 sec), logging

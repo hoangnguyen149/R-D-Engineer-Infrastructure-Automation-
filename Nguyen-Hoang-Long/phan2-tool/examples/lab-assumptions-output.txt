@@ -1,0 +1,18 @@
+Cluster: LAB-ONLY-hypothetical-corrections | Plan: balanced
+Metrics: valid records only; incomplete totals are LOWER BOUNDS, not healthy.
+Node               State     CPU cores    CPU %    RAM GiB    RAM %  vCPU/core Assessment
+hcm-c3-n01         online       54.992    85.92     476.16    93.00       1.72 overloaded
+hcm-c3-n02         online       25.008    39.07     281.60    55.00       1.25 within_thresholds
+hcm-c3-n03         online       18.240    38.00     180.48    47.00       1.67 within_thresholds
+hcm-c3-n04         offline       0.000     0.00       0.00     0.00       0.00 offline
+hcm-c3-n05         online       50.508    78.92     417.94    81.63       1.12 within_thresholds
+hcm-c3-n06         online        9.592    29.98     133.12    52.00       2.94 within_thresholds
+MOVE VM 2008: hcm-c3-n01 -> hcm-c3-n02
+AFTER (projected): node CPU% RAM% vCPU/core
+hcm-c3-n01: 74.89% 81.72% 1.59 (within_thresholds)
+hcm-c3-n02: 50.11% 66.28% 1.38 (within_thresholds)
+hcm-c3-n03: 38.00% 47.00% 1.67 (within_thresholds)
+hcm-c3-n04: 0.00% 0.00% 0.00 (offline)
+hcm-c3-n05: 78.92% 81.63% 1.12 (within_thresholds)
+hcm-c3-n06: 29.98% 52.00% 2.94 (within_thresholds)
+Production ready: false (resource suggestion only; no migration executed)

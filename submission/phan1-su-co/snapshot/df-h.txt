@@ -1,0 +1,10 @@
+# root@web-hcm-07:~# date; df -h   (chạy lúc on-call vào máy)
+Tue Oct 20 02:23:41 AM +07 2026
+Filesystem      Size  Used Avail Use% Mounted on
+udev             16G     0   16G   0% /dev
+tmpfs           3.2G  1.4M  3.2G   1% /run
+/dev/sda2       118G  118G     0 100% /
+tmpfs            16G     0   16G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sda1       974M  148M  759M  17% /boot
+tmpfs           3.2G  4.0K  3.2G   1% /run/user/1001

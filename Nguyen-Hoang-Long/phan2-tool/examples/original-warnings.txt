@@ -1,0 +1,8 @@
+WARNING nodes[5] hcm-c3-n06: mem_total must be integer bytes >= 1 GiB (sanity policy)
+WARNING vms[3] vmid=2067 node=hcm-c3-n02: cpu_usage must be finite fraction in [0,1]
+WARNING vms[10] vmid=2073 node=hcm-c3-n02: cpu_usage must be finite fraction in [0,1]
+WARNING vms[24] vmid=2001 node=hcm-c3-n01: duplicate vmid: all copies excluded, no guessed owner
+WARNING vms[28] vmid=2065 node=hcm-c3-n02: cpu_usage must be finite fraction in [0,1]
+WARNING vms[39] vmid=2001 node=hcm-c3-n02: duplicate vmid: all copies excluded, no guessed owner
+WARNING vms[44] vmid=2199 node=hcm-c3-n05: mem_used must be nonnegative integer bytes
+WARNING vms[48] vmid=2390 node=hcm-c3-n07: unknown or invalid node reference

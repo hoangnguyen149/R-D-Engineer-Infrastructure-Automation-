@@ -1,0 +1,10 @@
+Cluster: pve-hcm-c3 | Plan: blocked_invalid_data
+Metrics: valid records only; incomplete totals are LOWER BOUNDS, not healthy.
+Node               State     CPU cores    CPU %    RAM GiB    RAM %  vCPU/core Assessment
+hcm-c3-n01         online       52.076    81.37     452.28    88.34       1.53 overloaded_lower_bound
+hcm-c3-n02         online       20.976    32.77     229.88    44.90       1.09 unknown
+hcm-c3-n03         online       18.240    38.00     180.48    47.00       1.67 within_thresholds
+hcm-c3-n04         offline       0.000     0.00       0.00     0.00       0.00 offline
+hcm-c3-n05         online       44.784    69.97     367.94    71.86       0.94 unknown
+hcm-c3-n06         online        9.592      N/A     133.12      N/A        N/A unknown
+Production ready: false (resource suggestion only; no migration executed)

@@ -1,0 +1,184 @@
+Oct 12 00:00:01 web-hcm-07 CRON[1399]: (root) CMD (test -x /usr/sbin/logrotate && /usr/sbin/logrotate /etc/logrotate.conf)
+Oct 12 00:00:03 web-hcm-07 systemd[1]: logrotate.service: Deactivated successfully.
+Oct 12 00:30:01 web-hcm-07 CRON[1637]: (root) CMD (/usr/local/bin/disk-check.sh)
+Oct 12 00:30:02 web-hcm-07 disk-check: OK / usage 55%
+Oct 12 00:35:46 web-hcm-07 CRON[3192]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 12 01:00:01 web-hcm-07 CRON[2021]: (root) CMD (/usr/local/bin/backup-sites.sh >> /var/log/backup-sites.log 2>&1)
+Oct 12 01:00:02 web-hcm-07 backup-sites: start backup /home -> /var/backups/sites-20261012.tar.gz
+Oct 12 01:02:10 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.30.191.192 DST=103.97.125.71 PROTO=TCP DPT=5900
+Oct 12 01:40:11 web-hcm-07 backup-sites: backup done size=17.0G
+Oct 12 01:40:12 web-hcm-07 backup-sites: removed old backup sites-20261011.tar.gz
+Oct 12 02:45:37 web-hcm-07 systemd[1]: Started session-929.scope - Session of User root.
+Oct 12 02:59:02 web-hcm-07 CRON[2913]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 12 05:19:36 web-hcm-07 systemd[1]: Started session-835.scope - Session of User root.
+Oct 12 06:04:15 web-hcm-07 CRON[2564]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 12 06:29:13 web-hcm-07 CRON[2812]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 12 07:40:42 web-hcm-07 CRON[2645]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 12 10:13:30 web-hcm-07 sshd[2277]: Invalid user admin from 185.38.9.83 port 63315
+Oct 12 14:26:17 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.250.202.53 DST=103.97.125.71 PROTO=TCP DPT=6379
+Oct 12 20:32:25 web-hcm-07 systemd[1]: Started session-972.scope - Session of User root.
+Oct 12 21:05:25 web-hcm-07 systemd[1]: Started session-848.scope - Session of User root.
+Oct 12 22:46:05 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.205.225.204 DST=103.97.125.71 PROTO=TCP DPT=23
+Oct 13 00:00:01 web-hcm-07 CRON[3275]: (root) CMD (test -x /usr/sbin/logrotate && /usr/sbin/logrotate /etc/logrotate.conf)
+Oct 13 00:00:03 web-hcm-07 systemd[1]: logrotate.service: Deactivated successfully.
+Oct 13 00:30:01 web-hcm-07 CRON[3482]: (root) CMD (/usr/local/bin/disk-check.sh)
+Oct 13 00:30:02 web-hcm-07 disk-check: OK / usage 56%
+Oct 13 01:00:01 web-hcm-07 CRON[3686]: (root) CMD (/usr/local/bin/backup-sites.sh >> /var/log/backup-sites.log 2>&1)
+Oct 13 01:00:02 web-hcm-07 backup-sites: start backup /home -> /var/backups/sites-20261013.tar.gz
+Oct 13 01:41:11 web-hcm-07 backup-sites: backup done size=17.3G
+Oct 13 01:41:12 web-hcm-07 backup-sites: removed old backup sites-20261012.tar.gz
+Oct 13 07:13:01 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.134.51.17 DST=103.97.125.71 PROTO=TCP DPT=23
+Oct 13 08:58:48 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.125.29.172 DST=103.97.125.71 PROTO=TCP DPT=3306
+Oct 13 11:11:03 web-hcm-07 sshd[4261]: Invalid user test from 185.119.134.199 port 62361
+Oct 13 12:01:14 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.232.36.159 DST=103.97.125.71 PROTO=TCP DPT=3306
+Oct 13 12:35:46 web-hcm-07 CRON[4973]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 13 15:21:14 web-hcm-07 CRON[4671]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 13 17:41:52 web-hcm-07 sshd[16639]: Accepted publickey for hieunv from 10.20.1.15 port 52114 ssh2: ED25519 SHA256:q7m2...
+Oct 13 17:42:30 web-hcm-07 sudo:   hieunv : TTY=pts/0 ; PWD=/home/hieunv ; USER=root ; COMMAND=/usr/bin/vim /etc/logrotate.d/nginx
+Oct 13 17:44:02 web-hcm-07 sudo:   hieunv : TTY=pts/0 ; PWD=/home/hieunv ; USER=root ; COMMAND=/usr/bin/systemctl reload nginx
+Oct 13 18:10:18 web-hcm-07 sshd[4622]: Invalid user oracle from 185.71.66.171 port 59089
+Oct 13 21:28:34 web-hcm-07 systemd[1]: Started session-897.scope - Session of User root.
+Oct 13 23:41:11 web-hcm-07 sshd[3934]: Invalid user oracle from 185.117.108.118 port 59140
+Oct 14 00:00:01 web-hcm-07 CRON[5198]: (root) CMD (test -x /usr/sbin/logrotate && /usr/sbin/logrotate /etc/logrotate.conf)
+Oct 14 00:00:02 web-hcm-07 logrotate[5199]: error: /etc/logrotate.d/nginx:3 unknown option 'dailly' -- ignoring line
+Oct 14 00:00:02 web-hcm-07 logrotate[5199]: error: found error in /var/log/nginx/*.log , skipping
+Oct 14 00:00:03 web-hcm-07 systemd[1]: logrotate.service: Deactivated successfully.
+Oct 14 00:21:59 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.27.45.16 DST=103.97.125.71 PROTO=TCP DPT=6379
+Oct 14 00:30:01 web-hcm-07 CRON[5356]: (root) CMD (/usr/local/bin/disk-check.sh)
+Oct 14 00:30:02 web-hcm-07 disk-check: OK / usage 57%
+Oct 14 01:00:01 web-hcm-07 CRON[5613]: (root) CMD (/usr/local/bin/backup-sites.sh >> /var/log/backup-sites.log 2>&1)
+Oct 14 01:00:02 web-hcm-07 backup-sites: start backup /home -> /var/backups/sites-20261014.tar.gz
+Oct 14 01:42:11 web-hcm-07 backup-sites: backup done size=17.6G
+Oct 14 01:42:12 web-hcm-07 backup-sites: removed old backup sites-20261013.tar.gz
+Oct 14 01:46:42 web-hcm-07 systemd[1]: Started session-970.scope - Session of User root.
+Oct 14 05:09:06 web-hcm-07 sshd[6993]: Invalid user admin from 185.4.6.204 port 63780
+Oct 14 07:56:08 web-hcm-07 systemd[1]: Started session-873.scope - Session of User root.
+Oct 14 11:46:29 web-hcm-07 sshd[6684]: Invalid user git from 185.243.44.108 port 54709
+Oct 14 11:48:34 web-hcm-07 sshd[6151]: Invalid user oracle from 185.183.111.27 port 40487
+Oct 14 16:18:26 web-hcm-07 CRON[5858]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 14 17:19:58 web-hcm-07 sshd[6305]: Invalid user ubuntu from 185.41.87.235 port 60585
+Oct 14 19:08:04 web-hcm-07 sshd[5891]: Invalid user test from 185.56.202.210 port 50771
+Oct 14 20:31:24 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.12.106.86 DST=103.97.125.71 PROTO=TCP DPT=3306
+Oct 14 21:22:02 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.189.171.122 DST=103.97.125.71 PROTO=TCP DPT=6379
+Oct 14 21:22:49 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.178.30.171 DST=103.97.125.71 PROTO=TCP DPT=5900
+Oct 14 23:13:05 web-hcm-07 CRON[6509]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 14 23:33:07 web-hcm-07 zabbix_agentd[758]: active check configuration update from [zbx-proxy-hcm:10051] started
+Oct 15 00:00:01 web-hcm-07 CRON[7121]: (root) CMD (test -x /usr/sbin/logrotate && /usr/sbin/logrotate /etc/logrotate.conf)
+Oct 15 00:00:02 web-hcm-07 logrotate[7122]: error: /etc/logrotate.d/nginx:3 unknown option 'dailly' -- ignoring line
+Oct 15 00:00:02 web-hcm-07 logrotate[7122]: error: found error in /var/log/nginx/*.log , skipping
+Oct 15 00:00:03 web-hcm-07 systemd[1]: logrotate.service: Deactivated successfully.
+Oct 15 00:30:01 web-hcm-07 CRON[7229]: (root) CMD (/usr/local/bin/disk-check.sh)
+Oct 15 00:30:02 web-hcm-07 disk-check: OK / usage 62%
+Oct 15 01:00:01 web-hcm-07 CRON[7403]: (root) CMD (/usr/local/bin/backup-sites.sh >> /var/log/backup-sites.log 2>&1)
+Oct 15 01:00:02 web-hcm-07 backup-sites: start backup /home -> /var/backups/sites-20261015.tar.gz
+Oct 15 01:38:11 web-hcm-07 backup-sites: backup done size=17.9G
+Oct 15 01:38:12 web-hcm-07 backup-sites: removed old backup sites-20261014.tar.gz
+Oct 15 03:33:18 web-hcm-07 sshd[8196]: Invalid user git from 185.97.93.184 port 50026
+Oct 15 05:50:08 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.20.101.139 DST=103.97.125.71 PROTO=TCP DPT=6379
+Oct 15 12:16:54 web-hcm-07 sshd[7609]: Invalid user ubuntu from 185.249.6.199 port 58587
+Oct 15 12:39:27 web-hcm-07 sshd[8000]: Invalid user git from 185.31.194.95 port 49961
+Oct 15 14:12:06 web-hcm-07 systemd[1]: Started session-847.scope - Session of User root.
+Oct 15 16:17:24 web-hcm-07 zabbix_agentd[711]: active check configuration update from [zbx-proxy-hcm:10051] started
+Oct 15 18:46:47 web-hcm-07 sshd[8045]: Invalid user oracle from 185.77.166.75 port 41463
+Oct 15 19:11:01 web-hcm-07 sshd[7704]: Invalid user oracle from 185.191.8.96 port 49613
+Oct 16 00:00:01 web-hcm-07 CRON[8535]: (root) CMD (test -x /usr/sbin/logrotate && /usr/sbin/logrotate /etc/logrotate.conf)
+Oct 16 00:00:02 web-hcm-07 logrotate[8536]: error: /etc/logrotate.d/nginx:3 unknown option 'dailly' -- ignoring line
+Oct 16 00:00:02 web-hcm-07 logrotate[8536]: error: found error in /var/log/nginx/*.log , skipping
+Oct 16 00:00:03 web-hcm-07 systemd[1]: logrotate.service: Deactivated successfully.
+Oct 16 00:30:01 web-hcm-07 CRON[8828]: (root) CMD (/usr/local/bin/disk-check.sh)
+Oct 16 00:30:02 web-hcm-07 disk-check: OK / usage 67%
+Oct 16 01:00:01 web-hcm-07 CRON[9217]: (root) CMD (/usr/local/bin/backup-sites.sh >> /var/log/backup-sites.log 2>&1)
+Oct 16 01:00:02 web-hcm-07 backup-sites: start backup /home -> /var/backups/sites-20261016.tar.gz
+Oct 16 01:39:11 web-hcm-07 backup-sites: backup done size=18.2G
+Oct 16 01:39:12 web-hcm-07 backup-sites: removed old backup sites-20261015.tar.gz
+Oct 16 02:33:52 web-hcm-07 CRON[9846]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 16 03:30:16 web-hcm-07 CRON[10280]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 16 03:52:33 web-hcm-07 sshd[10467]: Invalid user test from 185.195.192.220 port 35122
+Oct 16 05:59:49 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.41.195.89 DST=103.97.125.71 PROTO=TCP DPT=6379
+Oct 16 11:51:46 web-hcm-07 systemd[1]: Started session-846.scope - Session of User root.
+Oct 16 15:41:33 web-hcm-07 sshd[9611]: Invalid user test from 185.212.153.84 port 50380
+Oct 16 18:22:15 web-hcm-07 zabbix_agentd[723]: active check configuration update from [zbx-proxy-hcm:10051] started
+Oct 16 23:12:51 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.113.80.240 DST=103.97.125.71 PROTO=TCP DPT=23
+Oct 16 23:29:33 web-hcm-07 sshd[10044]: Invalid user git from 185.134.159.10 port 38213
+Oct 16 23:53:22 web-hcm-07 sshd[10722]: Invalid user oracle from 185.125.223.166 port 59127
+Oct 17 00:00:01 web-hcm-07 CRON[10879]: (root) CMD (test -x /usr/sbin/logrotate && /usr/sbin/logrotate /etc/logrotate.conf)
+Oct 17 00:00:02 web-hcm-07 logrotate[10880]: error: /etc/logrotate.d/nginx:3 unknown option 'dailly' -- ignoring line
+Oct 17 00:00:02 web-hcm-07 logrotate[10880]: error: found error in /var/log/nginx/*.log , skipping
+Oct 17 00:00:03 web-hcm-07 systemd[1]: logrotate.service: Deactivated successfully.
+Oct 17 00:30:01 web-hcm-07 CRON[11273]: (root) CMD (/usr/local/bin/disk-check.sh)
+Oct 17 00:30:02 web-hcm-07 disk-check: OK / usage 72%
+Oct 17 01:00:01 web-hcm-07 CRON[11503]: (root) CMD (/usr/local/bin/backup-sites.sh >> /var/log/backup-sites.log 2>&1)
+Oct 17 01:00:02 web-hcm-07 backup-sites: start backup /home -> /var/backups/sites-20261017.tar.gz
+Oct 17 01:01:22 web-hcm-07 zabbix_agentd[739]: active check configuration update from [zbx-proxy-hcm:10051] started
+Oct 17 01:14:40 web-hcm-07 systemd[1]: Started session-878.scope - Session of User root.
+Oct 17 01:40:11 web-hcm-07 backup-sites: backup done size=18.5G
+Oct 17 01:40:12 web-hcm-07 backup-sites: removed old backup sites-20261016.tar.gz
+Oct 17 05:37:11 web-hcm-07 sshd[12040]: Invalid user test from 185.100.173.38 port 59632
+Oct 17 10:17:34 web-hcm-07 CRON[12638]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 17 12:21:10 web-hcm-07 CRON[12150]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 17 13:55:22 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.192.132.216 DST=103.97.125.71 PROTO=TCP DPT=3306
+Oct 17 16:01:15 web-hcm-07 CRON[12626]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 17 17:53:05 web-hcm-07 systemd[1]: Started session-877.scope - Session of User root.
+Oct 17 20:10:30 web-hcm-07 CRON[11900]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 17 23:22:53 web-hcm-07 CRON[12332]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 18 00:00:01 web-hcm-07 CRON[12923]: (root) CMD (test -x /usr/sbin/logrotate && /usr/sbin/logrotate /etc/logrotate.conf)
+Oct 18 00:00:02 web-hcm-07 logrotate[12924]: error: /etc/logrotate.d/nginx:3 unknown option 'dailly' -- ignoring line
+Oct 18 00:00:02 web-hcm-07 logrotate[12924]: error: found error in /var/log/nginx/*.log , skipping
+Oct 18 00:00:03 web-hcm-07 systemd[1]: logrotate.service: Deactivated successfully.
+Oct 18 00:30:01 web-hcm-07 CRON[12988]: (root) CMD (/usr/local/bin/disk-check.sh)
+Oct 18 00:30:02 web-hcm-07 disk-check: OK / usage 77%
+Oct 18 01:00:01 web-hcm-07 CRON[13354]: (root) CMD (/usr/local/bin/backup-sites.sh >> /var/log/backup-sites.log 2>&1)
+Oct 18 01:00:02 web-hcm-07 backup-sites: start backup /home -> /var/backups/sites-20261018.tar.gz
+Oct 18 01:41:11 web-hcm-07 backup-sites: backup done size=18.8G
+Oct 18 01:41:12 web-hcm-07 backup-sites: removed old backup sites-20261017.tar.gz
+Oct 18 03:06:45 web-hcm-07 CRON[13457]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 18 03:12:48 web-hcm-07 zabbix_agentd[701]: active check configuration update from [zbx-proxy-hcm:10051] started
+Oct 18 05:57:36 web-hcm-07 systemd[1]: Started session-803.scope - Session of User root.
+Oct 18 06:29:07 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.11.246.87 DST=103.97.125.71 PROTO=TCP DPT=3306
+Oct 18 08:05:37 web-hcm-07 sshd[13719]: Invalid user admin from 185.209.136.92 port 50452
+Oct 18 12:40:32 web-hcm-07 zabbix_agentd[727]: active check configuration update from [zbx-proxy-hcm:10051] started
+Oct 18 13:06:23 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.7.243.1 DST=103.97.125.71 PROTO=TCP DPT=3306
+Oct 18 20:56:03 web-hcm-07 sshd[13907]: Invalid user admin from 185.197.63.62 port 62250
+Oct 18 22:44:39 web-hcm-07 zabbix_agentd[703]: active check configuration update from [zbx-proxy-hcm:10051] started
+Oct 18 23:41:47 web-hcm-07 systemd[1]: Started session-978.scope - Session of User root.
+Oct 19 00:00:01 web-hcm-07 CRON[14250]: (root) CMD (test -x /usr/sbin/logrotate && /usr/sbin/logrotate /etc/logrotate.conf)
+Oct 19 00:00:02 web-hcm-07 logrotate[14251]: error: /etc/logrotate.d/nginx:3 unknown option 'dailly' -- ignoring line
+Oct 19 00:00:02 web-hcm-07 logrotate[14251]: error: found error in /var/log/nginx/*.log , skipping
+Oct 19 00:00:03 web-hcm-07 systemd[1]: logrotate.service: Deactivated successfully.
+Oct 19 00:30:01 web-hcm-07 CRON[14378]: (root) CMD (/usr/local/bin/disk-check.sh)
+Oct 19 00:30:02 web-hcm-07 disk-check: WARN / usage 82%
+Oct 19 01:00:01 web-hcm-07 CRON[14495]: (root) CMD (/usr/local/bin/backup-sites.sh >> /var/log/backup-sites.log 2>&1)
+Oct 19 01:00:02 web-hcm-07 backup-sites: start backup /home -> /var/backups/sites-20261019.tar.gz
+Oct 19 01:42:11 web-hcm-07 backup-sites: backup done size=19.1G
+Oct 19 01:42:12 web-hcm-07 backup-sites: removed old backup sites-20261018.tar.gz
+Oct 19 01:48:27 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.240.75.97 DST=103.97.125.71 PROTO=TCP DPT=5900
+Oct 19 02:03:38 web-hcm-07 sshd[14872]: Invalid user git from 185.6.34.150 port 30465
+Oct 19 03:21:02 web-hcm-07 zabbix_agentd[737]: active check configuration update from [zbx-proxy-hcm:10051] started
+Oct 19 04:32:29 web-hcm-07 sshd[15428]: Invalid user oracle from 185.228.204.115 port 36614
+Oct 19 07:10:26 web-hcm-07 systemd[1]: Started session-800.scope - Session of User root.
+Oct 19 09:31:45 web-hcm-07 CRON[15125]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 19 13:07:46 web-hcm-07 sshd[15865]: Invalid user oracle from 185.48.161.234 port 51374
+Oct 19 13:53:43 web-hcm-07 CRON[15398]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 19 18:14:51 web-hcm-07 zabbix_agentd[734]: active check configuration update from [zbx-proxy-hcm:10051] started
+Oct 19 19:59:43 web-hcm-07 CRON[15552]: (www-data) CMD (php /home/site42/public_html/wp-cron.php > /dev/null 2>&1)
+Oct 20 00:00:01 web-hcm-07 CRON[16012]: (root) CMD (test -x /usr/sbin/logrotate && /usr/sbin/logrotate /etc/logrotate.conf)
+Oct 20 00:00:02 web-hcm-07 logrotate[16013]: error: /etc/logrotate.d/nginx:3 unknown option 'dailly' -- ignoring line
+Oct 20 00:00:02 web-hcm-07 logrotate[16013]: error: found error in /var/log/nginx/*.log , skipping
+Oct 20 00:00:03 web-hcm-07 systemd[1]: logrotate.service: Deactivated successfully.
+Oct 20 00:30:01 web-hcm-07 CRON[16185]: (root) CMD (/usr/local/bin/disk-check.sh)
+Oct 20 00:30:02 web-hcm-07 disk-check: WARN / usage 87%
+Oct 20 01:00:01 web-hcm-07 CRON[16887]: (root) CMD (/usr/local/bin/backup-sites.sh >> /var/log/backup-sites.log 2>&1)
+Oct 20 01:00:02 web-hcm-07 backup-sites: start backup /home -> /var/backups/sites-20261020.tar.gz
+Oct 20 01:02:04 web-hcm-07 sshd[16570]: Invalid user ubuntu from 185.5.159.96 port 32248
+Oct 20 01:32:57 web-hcm-07 backup-sites: tar: /var/backups/sites-20261020.tar.gz: Wrote only 4096 of 10240 bytes
+Oct 20 01:32:57 web-hcm-07 backup-sites: tar: Error is not recoverable: exiting now
+Oct 20 01:32:58 web-hcm-07 backup-sites: ERROR backup failed exit=2, keep old backups
+Oct 20 01:33:04 web-hcm-07 mysqld[1187]: [ERROR] [MY-000035] [Server] Disk is full writing './binlog.000187' (OS errno 28 - No space left on device). Waiting for someone to free space... Retry in 60 secs.
+Oct 20 01:34:40 web-hcm-07 zabbix_agentd[731]: item [vfs.fs.size[/,pfree]] became not supported: Cannot write to log file
+Oct 20 01:43:04 web-hcm-07 mysqld[1187]: [ERROR] [MY-000035] [Server] Disk is full writing './binlog.000187' (OS errno 28 - No space left on device). Waiting for someone to free space... Retry in 60 secs.
+Oct 20 01:51:10 web-hcm-07 kernel: [UFW BLOCK] IN=ens18 OUT= SRC=45.135.232.17 DST=103.97.125.71 PROTO=TCP DPT=3306
+Oct 20 01:53:04 web-hcm-07 mysqld[1187]: [ERROR] [MY-000035] [Server] Disk is full writing './binlog.000187' (OS errno 28 - No space left on device). Waiting for someone to free space... Retry in 60 secs.
+Oct 20 02:03:04 web-hcm-07 mysqld[1187]: [ERROR] [MY-000035] [Server] Disk is full writing './binlog.000187' (OS errno 28 - No space left on device). Waiting for someone to free space... Retry in 60 secs.
+Oct 20 02:13:04 web-hcm-07 mysqld[1187]: [ERROR] [MY-000035] [Server] Disk is full writing './binlog.000187' (OS errno 28 - No space left on device). Waiting for someone to free space... Retry in 60 secs.
+Oct 20 02:21:11 web-hcm-07 sshd[17146]: Accepted publickey for oncall from 10.20.1.22 port 40118 ssh2: ED25519 SHA256:Lx0c...
+Oct 20 02:23:04 web-hcm-07 mysqld[1187]: [ERROR] [MY-000035] [Server] Disk is full writing './binlog.000187' (OS errno 28 - No space left on device). Waiting for someone to free space... Retry in 60 secs.

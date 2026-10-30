@@ -1,0 +1,14 @@
+# root@web-hcm-07:~# ss -s
+Total: 2391
+TCP:   1904 (estab 412, closed 1367, orphaned 3, timewait 1360)
+
+Transport Total     IP        IPv6
+RAW	  1         0         1
+UDP	  9         6         3
+TCP	  537       531       6
+
+# root@web-hcm-07:~# ss -xlp | grep php
+u_str LISTEN 511 511 /run/php/php8.1-fpm.sock 3912201 * 0 users:(("php-fpm8.1",pid=1302,fd=8))
+
+# root@web-hcm-07:~# mysqladmin processlist | grep -c "Waiting for"
+49

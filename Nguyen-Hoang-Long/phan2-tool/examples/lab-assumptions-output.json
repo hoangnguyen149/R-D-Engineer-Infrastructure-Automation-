@@ -1,0 +1,240 @@
+{
+  "cluster": "LAB-ONLY-hypothetical-corrections",
+  "collected_at": "2026-10-27T09:00:00+07:00",
+  "thresholds": {
+    "cpu": 0.8,
+    "ram": 0.85,
+    "overcommit": 4
+  },
+  "warnings": [],
+  "before": {
+    "hcm-c3-n01": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 14,
+      "cpu_cores_used": 54.992,
+      "ram_bytes_used": 511272906909,
+      "running_vcpus": 110,
+      "configured_vcpus_all_valid_records": 126,
+      "ratios": {
+        "cpu": 0.85925,
+        "ram": 0.9299999999875581,
+        "overcommit": 1.71875
+      },
+      "overloaded_dimensions": [
+        "cpu",
+        "ram"
+      ],
+      "assessment": "overloaded"
+    },
+    "hcm-c3-n02": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 13,
+      "cpu_cores_used": 25.008,
+      "ram_bytes_used": 302365697632,
+      "running_vcpus": 80,
+      "configured_vcpus_all_valid_records": 80,
+      "ratios": {
+        "cpu": 0.39075,
+        "ram": 0.5499999999883585,
+        "overcommit": 1.25
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    },
+    "hcm-c3-n03": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 11,
+      "cpu_cores_used": 18.240000000000002,
+      "ram_bytes_used": 193788924390,
+      "running_vcpus": 80,
+      "configured_vcpus_all_valid_records": 96,
+      "ratios": {
+        "cpu": 0.38000000000000006,
+        "ram": 0.46999999998661224,
+        "overcommit": 1.6666666666666667
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    },
+    "hcm-c3-n04": {
+      "status": "offline",
+      "complete": true,
+      "running_vms": 0,
+      "cpu_cores_used": 0,
+      "ram_bytes_used": 0,
+      "running_vcpus": 0,
+      "configured_vcpus_all_valid_records": 0,
+      "ratios": {
+        "cpu": 0.0,
+        "ram": 0.0,
+        "overcommit": 0.0
+      },
+      "overloaded_dimensions": [],
+      "assessment": "offline"
+    },
+    "hcm-c3-n05": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 12,
+      "cpu_cores_used": 50.508,
+      "ram_bytes_used": 448760332909,
+      "running_vcpus": 72,
+      "configured_vcpus_all_valid_records": 88,
+      "ratios": {
+        "cpu": 0.7891875,
+        "ram": 0.8162902902931819,
+        "overcommit": 1.125
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    },
+    "hcm-c3-n06": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 12,
+      "cpu_cores_used": 9.592,
+      "ram_bytes_used": 142936511603,
+      "running_vcpus": 94,
+      "configured_vcpus_all_valid_records": 94,
+      "ratios": {
+        "cpu": 0.29975,
+        "ram": 0.5199999999713327,
+        "overcommit": 2.9375
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    }
+  },
+  "plan": [
+    {
+      "vmid": 2008,
+      "from": "hcm-c3-n01",
+      "to": "hcm-c3-n02",
+      "incoming_ram_reservation_bytes": 73014444032,
+      "target_after": {
+        "status": "online",
+        "complete": true,
+        "running_vms": 14,
+        "cpu_cores_used": 32.072,
+        "ram_bytes_used": 364362105753,
+        "running_vcpus": 88,
+        "configured_vcpus_all_valid_records": 88,
+        "ratios": {
+          "cpu": 0.501125,
+          "ram": 0.6627708094183618,
+          "overcommit": 1.375
+        },
+        "overloaded_dimensions": [],
+        "assessment": "within_thresholds"
+      }
+    }
+  ],
+  "after": {
+    "hcm-c3-n01": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 13,
+      "cpu_cores_used": 47.928,
+      "ram_bytes_used": 449276498788,
+      "running_vcpus": 102,
+      "configured_vcpus_all_valid_records": 118,
+      "ratios": {
+        "cpu": 0.748875,
+        "ram": 0.8172291905575548,
+        "overcommit": 1.59375
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    },
+    "hcm-c3-n02": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 14,
+      "cpu_cores_used": 32.072,
+      "ram_bytes_used": 364362105753,
+      "running_vcpus": 88,
+      "configured_vcpus_all_valid_records": 88,
+      "ratios": {
+        "cpu": 0.501125,
+        "ram": 0.6627708094183618,
+        "overcommit": 1.375
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    },
+    "hcm-c3-n03": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 11,
+      "cpu_cores_used": 18.240000000000002,
+      "ram_bytes_used": 193788924390,
+      "running_vcpus": 80,
+      "configured_vcpus_all_valid_records": 96,
+      "ratios": {
+        "cpu": 0.38000000000000006,
+        "ram": 0.46999999998661224,
+        "overcommit": 1.6666666666666667
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    },
+    "hcm-c3-n04": {
+      "status": "offline",
+      "complete": true,
+      "running_vms": 0,
+      "cpu_cores_used": 0,
+      "ram_bytes_used": 0,
+      "running_vcpus": 0,
+      "configured_vcpus_all_valid_records": 0,
+      "ratios": {
+        "cpu": 0.0,
+        "ram": 0.0,
+        "overcommit": 0.0
+      },
+      "overloaded_dimensions": [],
+      "assessment": "offline"
+    },
+    "hcm-c3-n05": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 12,
+      "cpu_cores_used": 50.508,
+      "ram_bytes_used": 448760332909,
+      "running_vcpus": 72,
+      "configured_vcpus_all_valid_records": 88,
+      "ratios": {
+        "cpu": 0.7891875,
+        "ram": 0.8162902902931819,
+        "overcommit": 1.125
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    },
+    "hcm-c3-n06": {
+      "status": "online",
+      "complete": true,
+      "running_vms": 12,
+      "cpu_cores_used": 9.592,
+      "ram_bytes_used": 142936511603,
+      "running_vcpus": 94,
+      "configured_vcpus_all_valid_records": 94,
+      "ratios": {
+        "cpu": 0.29975,
+        "ram": 0.5199999999713327,
+        "overcommit": 2.9375
+      },
+      "overloaded_dimensions": [],
+      "assessment": "within_thresholds"
+    }
+  },
+  "plan_status": "balanced",
+  "resource_plan_complete": true,
+  "production_ready": false,
+  "notes": [
+    "Read-only snapshot estimate, excludes host overhead and future load.",
+    "Verify fresh telemetry, storage, CPU compatibility, network, HA/affinity, locks and migration overhead before execution."
+  ]
+}

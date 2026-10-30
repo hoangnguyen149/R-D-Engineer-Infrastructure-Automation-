@@ -1,0 +1,4 @@
+# root@web-hcm-07:~# free -m
+               total        used        free      shared  buff/cache   available
+Mem:           31994        9182         611         402       22201       22053
+Swap:           2047          12        2035

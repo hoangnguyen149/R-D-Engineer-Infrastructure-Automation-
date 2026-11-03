@@ -40,6 +40,7 @@
       "message": "unknown or invalid node reference"
     }
   ],
+  "excluded_records": 8,
   "before": {
     "hcm-c3-n01": {
       "status": "online",
@@ -137,26 +138,47 @@
       "assessment": "unknown"
     }
   },
-  "plan": [],
+  "plan": [
+    {
+      "vmid": 2018,
+      "from": "hcm-c3-n01",
+      "to": "hcm-c3-n03",
+      "incoming_ram_reservation_bytes": 24696061952,
+      "source_load_is_lower_bound": true,
+      "target_after": {
+        "status": "online",
+        "complete": true,
+        "running_vms": 12,
+        "cpu_cores_used": 20.592,
+        "ram_bytes_used": 214483916637,
+        "running_vcpus": 96,
+        "configured_vcpus_all_valid_records": 112,
+        "ratios": {
+          "cpu": 0.429,
+          "ram": 0.5201919621249544,
+          "overcommit": 2.0
+        },
+        "overloaded_dimensions": [],
+        "assessment": "within_thresholds"
+      }
+    }
+  ],
   "after": {
     "hcm-c3-n01": {
       "status": "online",
       "complete": false,
-      "running_vms": 13,
-      "cpu_cores_used": 52.076,
-      "ram_bytes_used": 485635735871,
-      "running_vcpus": 98,
-      "configured_vcpus_all_valid_records": 114,
+      "running_vms": 12,
+      "cpu_cores_used": 49.724000000000004,
+      "ram_bytes_used": 464940743624,
+      "running_vcpus": 82,
+      "configured_vcpus_all_valid_records": 98,
       "ratios": {
-        "cpu": 0.8136875,
-        "ram": 0.8833662575325434,
-        "overcommit": 1.53125
+        "cpu": 0.7769375000000001,
+        "ram": 0.8457222859287867,
+        "overcommit": 1.28125
       },
-      "overloaded_dimensions": [
-        "cpu",
-        "ram"
-      ],
-      "assessment": "overloaded_lower_bound"
+      "overloaded_dimensions": [],
+      "assessment": "unknown"
     },
     "hcm-c3-n02": {
       "status": "online",
@@ -177,15 +199,15 @@
     "hcm-c3-n03": {
       "status": "online",
       "complete": true,
-      "running_vms": 11,
-      "cpu_cores_used": 18.240000000000002,
-      "ram_bytes_used": 193788924390,
-      "running_vcpus": 80,
-      "configured_vcpus_all_valid_records": 96,
+      "running_vms": 12,
+      "cpu_cores_used": 20.592,
+      "ram_bytes_used": 214483916637,
+      "running_vcpus": 96,
+      "configured_vcpus_all_valid_records": 112,
       "ratios": {
-        "cpu": 0.38000000000000006,
-        "ram": 0.46999999998661224,
-        "overcommit": 1.6666666666666667
+        "cpu": 0.429,
+        "ram": 0.5201919621249544,
+        "overcommit": 2.0
       },
       "overloaded_dimensions": [],
       "assessment": "within_thresholds"
@@ -235,11 +257,12 @@
       "assessment": "unknown"
     }
   },
-  "plan_status": "blocked_invalid_data",
+  "plan_status": "partial_plan_with_excluded_records",
   "resource_plan_complete": false,
   "production_ready": false,
   "notes": [
     "Read-only snapshot estimate, excludes host overhead and future load.",
-    "Verify fresh telemetry, storage, CPU compatibility, network, HA/affinity, locks and migration overhead before execution."
+    "Verify fresh telemetry, storage, CPU compatibility, network, HA/affinity, locks and migration overhead before execution.",
+    "Invalid records were excluded and are listed in warnings. Nodes with excluded records show LOWER-BOUND load and are never used as migration targets; re-check them after fixing the data."
   ]
 }

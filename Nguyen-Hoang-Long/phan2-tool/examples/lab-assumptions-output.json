@@ -7,6 +7,7 @@
     "overcommit": 4
   },
   "warnings": [],
+  "excluded_records": 0,
   "before": {
     "hcm-c3-n01": {
       "status": "online",
@@ -114,6 +115,7 @@
       "from": "hcm-c3-n01",
       "to": "hcm-c3-n02",
       "incoming_ram_reservation_bytes": 73014444032,
+      "source_load_is_lower_bound": false,
       "target_after": {
         "status": "online",
         "complete": true,

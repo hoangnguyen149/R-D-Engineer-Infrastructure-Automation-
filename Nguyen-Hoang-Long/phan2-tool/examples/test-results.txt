@@ -1,26 +1,40 @@
 test_bad_root (test_cluster_balance.PlannerTests.test_bad_root) ... ok
+test_blocked_only_when_nothing_usable (test_cluster_balance.PlannerTests.test_blocked_only_when_nothing_usable) ... ok
+test_clean_data_still_reports_balanced (test_cluster_balance.PlannerTests.test_clean_data_still_reports_balanced) ... ok
+test_cli_exit_status_contract (test_cluster_balance.PlannerTests.test_cli_exit_status_contract) ... ok
 test_cli_invalid_json (test_cluster_balance.PlannerTests.test_cli_invalid_json) ... ok
 test_cli_missing_file (test_cluster_balance.PlannerTests.test_cli_missing_file) ... ok
+test_cli_original_exit_and_json (test_cluster_balance.PlannerTests.test_cli_original_exit_and_json) ... ok
+test_cli_original_table_shows_move_and_warning_count (test_cluster_balance.PlannerTests.test_cli_original_table_shows_move_and_warning_count) ... ok
 test_cpu_formula (test_cluster_balance.PlannerTests.test_cpu_formula) ... ok
 test_cpu_migration (test_cluster_balance.PlannerTests.test_cpu_migration) ... ok
 test_deterministic (test_cluster_balance.PlannerTests.test_deterministic) ... ok
 test_duplicate_all_excluded (test_cluster_balance.PlannerTests.test_duplicate_all_excluded) ... ok
 test_each_step_safe_in_lab (test_cluster_balance.PlannerTests.test_each_step_safe_in_lab) ... ok
 test_exact_threshold_not_overloaded (test_cluster_balance.PlannerTests.test_exact_threshold_not_overloaded) ... ok
+test_invalid_capacity_never_a_target (test_cluster_balance.PlannerTests.test_invalid_capacity_never_a_target) ... ok
 test_invalid_fields (test_cluster_balance.PlannerTests.test_invalid_fields) ... ok
 test_invalid_nodes (test_cluster_balance.PlannerTests.test_invalid_nodes) ... ok
+test_invalid_vm_removed_from_plan_but_warning_kept (test_cluster_balance.PlannerTests.test_invalid_vm_removed_from_plan_but_warning_kept) ... ok
 test_missing_field (test_cluster_balance.PlannerTests.test_missing_field) ... ok
+test_multiple_warnings_count_one_excluded_record (test_cluster_balance.PlannerTests.test_multiple_warnings_count_one_excluded_record) ... ok
 test_no_capacity_does_not_claim_success (test_cluster_balance.PlannerTests.test_no_capacity_does_not_claim_success) ... ok
 test_offline_target_never_used (test_cluster_balance.PlannerTests.test_offline_target_never_used) ... ok
+test_only_tainted_targets_gives_unresolved_not_unsafe_move (test_cluster_balance.PlannerTests.test_only_tainted_targets_gives_unresolved_not_unsafe_move) ... ok
 test_original_anomalies (test_cluster_balance.PlannerTests.test_original_anomalies) ... ok
+test_original_projection_preserves_lower_bounds_and_resources (test_cluster_balance.PlannerTests.test_original_projection_preserves_lower_bounds_and_resources) ... ok
+test_original_still_proposes_migration (test_cluster_balance.PlannerTests.test_original_still_proposes_migration)
+Regression: original file used to return blocked_invalid_data and an empty plan. ... ok
 test_overcommit_migration (test_cluster_balance.PlannerTests.test_overcommit_migration) ... ok
 test_ram_migration_and_conservation (test_cluster_balance.PlannerTests.test_ram_migration_and_conservation) ... ok
-test_running_on_offline_blocks (test_cluster_balance.PlannerTests.test_running_on_offline_blocks) ... ok
+test_running_on_offline_is_excluded_and_warned (test_cluster_balance.PlannerTests.test_running_on_offline_is_excluded_and_warned) ... ok
 test_stopped_excluded_running_overcommit (test_cluster_balance.PlannerTests.test_stopped_excluded_running_overcommit) ... ok
+test_tainted_node_never_a_target (test_cluster_balance.PlannerTests.test_tainted_node_never_a_target) ... ok
+test_tainted_source_can_still_shed_load (test_cluster_balance.PlannerTests.test_tainted_source_can_still_shed_load) ... ok
 test_threshold_validation (test_cluster_balance.PlannerTests.test_threshold_validation) ... ok
 test_transient_mem_max_headroom (test_cluster_balance.PlannerTests.test_transient_mem_max_headroom) ... ok
 
 ----------------------------------------------------------------------
-Ran 21 tests in 0.071s
+Ran 34 tests in 0.306s
 
 OK

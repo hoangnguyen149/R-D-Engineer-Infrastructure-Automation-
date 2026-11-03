@@ -20,7 +20,7 @@
 - Snapshot và log là dữ liệu phục vụ bài test. Phạm vi thực hiện là phân tích offline; chưa có quyền hoặc kênh kết nối production.
 - Thời gian sự cố được diễn giải theo múi giờ UTC+7 và năm 2026 như đề bài. Do thiếu cấu hình log của load balancer, chưa khẳng định timestamp biểu thị thời điểm bắt đầu hay kết thúc request.
 - Tải CPU được quy đổi theo vCPU × fraction; RAM được tính bằng byte. Các ngưỡng CPU 80%, RAM 85% và hệ số overcommit 4 là chính sách minh họa, cần xác nhận trước khi áp dụng thực tế.
-- Dữ liệu đầu vào có lỗi phải chặn việc sinh kế hoạch tự động. Bản dữ liệu lab chỉ sửa theo giả định được ghi rõ trong JSON, không được xem là dữ liệu production đã xác minh.
+- Chính sách trước bản sửa 03/11/2026: dữ liệu đầu vào có lỗi thì chặn việc sinh kế hoạch. Tool Test2 hiện lập đề xuất trên bản ghi hợp lệ, giữ cảnh báo và không dùng node thiếu dữ liệu/sai capacity làm đích; xem phiên sửa bên dưới. Bản dữ liệu lab chỉ sửa theo giả định được ghi rõ trong JSON, không được xem là dữ liệu production đã xác minh.
 - `mem_max` được sử dụng để kiểm tra dung lượng bộ nhớ cần có trên node đích khi nhận VM. Snapshot chưa phản ánh đầy đủ bộ nhớ dành cho host, storage, network và các ràng buộc HA.
 - Kế hoạch di chuyển VM là đầu ra đề xuất để rà soát, không phải bằng chứng đã thực hiện migration thành công.
 
@@ -63,3 +63,12 @@ Các điểm cần xác nhận trước khi triển khai thực tế:
 - lưu bằng chứng/thống ghi thời gian từng phiên và lưu script, lệnh chạy, đầu ra kiểm thử ngay trong quá trình thực hiện để các kết luận có thể tái lập và đối chiếu.
 - dựng lab Nginx, PHP-FPM và MySQL để kiểm tra các giả thuyết sự cố, quy trình phục hồi và rollback. Với migration, tôi sẽ bổ sung kiểm tra tài nguyên, storage, network và HA trước khi cân nhắc tự động thực thi.
 - trực tiếp chạy lại các bước kiểm chứng quan trọng, ghi nhận kết quả thực tế và rà soát toàn bộ bài nộp để bảo đảm có thể giải thích từng kết luận, giả định và giới hạn.
+
+## Phiên cập nhật tool Test2 theo góp ý RnD — 03/11/2026 (UTC+7)
+
+- Phạm vi: `Nguyen-Hoang-Long/phan2-tool/cluster_balance.py` trong repo `hoangnguyen149/R-D-Engineer-Infrastructure-Automation-`. Dùng mã nguồn Phần 2 trong `NguyenHoangLong-Phan2-only.zip` người dùng cung cấp làm cơ sở; đối chiếu với bản trên GitHub. Tool Test1 trong `submission/phan2-proxmox/analyze_cluster.py` và ZIP bài nộp lịch sử được giữ nguyên.
+- Công cụ: Codex và Python 3.12.14. Không đo đầy đủ thời lượng phiên, không gán thành thời gian tự làm của ứng viên. Các mốc nhận/nộp và nội dung nhật ký phiên trước được giữ nguyên.
+- Bỏ điều kiện chặn toàn bộ planner khi có warning; VM lỗi/trùng vẫn bị loại, cảnh báo được giữ nguyên, không đoán lại số liệu. Node sai capacity/status hoặc thiếu bản ghi không được nhận VM. Bước đi từ nguồn thiếu dữ liệu được gắn `source_load_is_lower_bound=true`; giữ `complete=false` sau mô phỏng.
+- Dữ liệu gốc: đề xuất VM2018 n01→n03, đủ 8 cảnh báo, `partial_plan_with_excluded_records`, exit 4, `resource_plan_complete=false`, `production_ready=false`. CPU/RAM n01 còn 77,69%/84,57% theo cận dưới; n03 sau nhận là 42,90%/52,02% trong mô hình. Chưa chứng minh cluster thật hết quá tải.
+- Kiểm tra: 34 unit/integration test, CLI gốc/lab ở JSON/bảng (exit 4/0), JSON lỗi và mã thoát 0/2/3/4; bảo toàn tổng tài nguyên hợp lệ, không chọn node thiếu dữ liệu/sai capacity, giữ dấu cận dưới, phân biệt số bản ghi bị loại với số cảnh báo. `kiem_tra.py` còn xác minh 4.718 request LB, 2.775 lỗi và các tài liệu của gói đầy đủ.
+- Cập nhật README, output mẫu, hướng dẫn kiểm tra và SHA256SUMS cho bản hiện tại. Không thay đổi JSON input, log sự cố, Test1, hay file ZIP bài nộp gốc; không truy cập production, thực hiện migration hoặc gửi email.

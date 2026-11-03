@@ -14,7 +14,7 @@ def run():
     (tool/'examples/test-results.txt').write_text(tests.stdout+tests.stderr)
     if tests.returncode: raise RuntimeError(tests.stdout+tests.stderr)
     print('PASS: unit/integration tests')
-    for name,expected in [('original',2),('lab-assumptions',0)]:
+    for name,expected in [('original',4),('lab-assumptions',0)]:
         for fmt,ext in [('json','json'),('table','txt')]:
             result=subprocess.run([sys.executable,str(tool/'cluster_balance.py'),str(tool/'examples'/f'{name}.json'),'--format',fmt],capture_output=True,text=True)
             if result.returncode!=expected:raise RuntimeError(result.stderr+result.stdout)
@@ -23,8 +23,13 @@ def run():
             if fmt=='json':
                 report=json.loads(result.stdout)
                 if name=='original':
-                    assert report['plan']==[] and report['plan_status']=='blocked_invalid_data'
+                    assert report['plan_status']=='partial_plan_with_excluded_records'
+                    assert report['plan'] and all(m['from']=='hcm-c3-n01' and m['to']=='hcm-c3-n03' for m in report['plan'])
+                    assert all(m['source_load_is_lower_bound'] for m in report['plan'])
+                    assert not report['resource_plan_complete']
+                    assert not report['after']['hcm-c3-n01']['complete']
                     assert len(report['warnings'])==8
+                    assert len(result.stderr.splitlines())==8
                 else:
                     assert report['resource_plan_complete']
                     assert all(not n['overloaded_dimensions'] for n in report['after'].values())

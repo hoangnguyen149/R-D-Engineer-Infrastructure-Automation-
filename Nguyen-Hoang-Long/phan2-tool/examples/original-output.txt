@@ -1,4 +1,4 @@
-Cluster: pve-hcm-c3 | Plan: blocked_invalid_data
+Cluster: pve-hcm-c3 | Plan: partial_plan_with_excluded_records
 Metrics: valid records only; incomplete totals are LOWER BOUNDS, not healthy.
 Node               State     CPU cores    CPU %    RAM GiB    RAM %  vCPU/core Assessment
 hcm-c3-n01         online       52.076    81.37     452.28    88.34       1.53 overloaded_lower_bound
@@ -7,4 +7,12 @@ hcm-c3-n03         online       18.240    38.00     180.48    47.00       1.67 w
 hcm-c3-n04         offline       0.000     0.00       0.00     0.00       0.00 offline
 hcm-c3-n05         online       44.784    69.97     367.94    71.86       0.94 unknown
 hcm-c3-n06         online        9.592      N/A     133.12      N/A        N/A unknown
+EXCLUDED RECORDS: 8 (details in warnings/stderr). Nodes marked unknown/lower_bound lack data and are never migration targets.
+MOVE VM 2018: hcm-c3-n01 -> hcm-c3-n03 [source load is a lower bound]
+AFTER (projected): node CPU% RAM% vCPU/core
+hcm-c3-n01: 77.69% 84.57% 1.28 (unknown)
+hcm-c3-n02: 32.77% 44.90% 1.09 (unknown)
+hcm-c3-n03: 42.90% 52.02% 2.00 (within_thresholds)
+hcm-c3-n04: 0.00% 0.00% 0.00 (offline)
+hcm-c3-n05: 69.97% 71.86% 0.94 (unknown)
 Production ready: false (resource suggestion only; no migration executed)

@@ -23,13 +23,13 @@ python3 kiem_tra.py
 
 Trên Windows dùng `py -3 kiem_tra.py` nếu Python Launcher đã được cài. Chạy trong thư mục giải nén; script dùng đường dẫn tương đối với chính nó nên cũng gọi được từ thư mục khác. Script chỉ ghi lại output kiểm thử/thống kê trong gói bài làm.
 
-Kết quả mong đợi: test pass; JSON/bảng gốc trả exit 2 do dữ liệu bất thường; JSON/bảng lab trả exit 0; tổng LB 4.718 request, 2.775 lỗi; đủ tài liệu yêu cầu. `exit 2` ở snapshot gốc được kiểm tra như hành vi mong đợi, không bỏ qua lỗi.
+Kết quả mong đợi: 34 test tool pass; JSON/bảng gốc trả exit 4 và có đề xuất VM2018 n01→n03, giữ đủ 8 cảnh báo; JSON/bảng lab trả exit 0; tổng LB 4.718 request, 2.775 lỗi; đủ tài liệu yêu cầu. `kiem_tra.py` kiểm tra đúng mã thoát và nội dung báo cáo, không bỏ qua lỗi. Xem [chính sách trạng thái và mã thoát](phan2-tool/README.md).
 
 ## Kết quả chính và giả định
 
 - Sự cố web-hcm-07: disk đầy do logrotate sai `dailly` + backup trên root. RAM vẫn còn ~22GiB available. Lỗi LB đầu tiên 01:33:05, cuối mẫu 02:25:01; chưa biết kết thúc incident.
 - Tỷ lệ lỗi 58,82% toàn mẫu, 88,04% từ 01:33; 5 hostname được quan sát có lỗi, khoảng 40 site là phạm vi node theo đề.
-- Snapshot Proxmox có 8 cảnh báo liên quan capacity, CPU ngoài miền, duplicate, null và orphan node. Không thể chứng nhận kế hoạch thật từ dữ liệu này. Tool không tự đổi đơn vị hoặc chọn bản trùng.
+- Snapshot Proxmox có 8 cảnh báo liên quan capacity, CPU ngoài miền, duplicate, null và orphan node. Sau sửa theo góp ý RnD, tool Test2 vẫn lập đề xuất trên bản ghi hợp lệ: VM2018 n01→n03, `partial_plan_with_excluded_records`, exit 4. Node thiếu dữ liệu/sai capacity không làm đích; tải n01 sau mô phỏng vẫn là cận dưới. `resource_plan_complete=false`, không chứng nhận cân bằng toàn cluster. Tool không tự đổi đơn vị hoặc chọn bản trùng.
 - Lab công khai giả định để kiểm chứng thuật toán; VM2008 n01→n02 giúp tất cả node online dưới ngưỡng mô hình CPU80%/RAM85%/overcommit4. Đây không phải khuyến nghị thực thi trên cluster thật.
 - Thời gian log sự cố hiểu là UTC+7; syslog không ghi năm nên lấy 2026 theo đề. LB rt được coi là thời gian request do LB ghi, không suy ra CPU hay thời gian backend riêng.
 
@@ -40,5 +40,7 @@ Cần kết nối quản trị được cấp quyền tới web-hcm-07/LB và te
 Đối với Proxmox, xác minh từng field bất thường từ API/inventory rồi xuất snapshot mới; kiểm tra storage, network, CPU compatibility, HA/affinity, locks và headroom khi live migrate. Tool không có chức năng thực thi migration.
 
 ## Trước khi gửi nhà tuyển dụng
+
+Bản Test2 đang được phát triển tại `Nguyen-Hoang-Long/phan2-tool/cluster_balance.py`. Bản Test1 (`submission/phan2-proxmox/analyze_cluster.py`) là tool khác. File `NguyenhHoangLong.zip` ở gốc repo giữ bản nộp lịch sử; để dùng bản sửa 03/11/2026, chạy trực tiếp thư mục Test2 trong repo.
 
 Ứng viên đọc và tự chạy `kiem_tra.py`, hiểu các giả định và cảnh báo. Nhật ký giữ nguyên việc đã dùng ChatGPT; bổ sung đúng giờ nhận email, phiên làm việc riêng và thời điểm nộp nếu có. Không bịa thời gian hoặc ghi đã test production. Đề cho phép AI nhưng yêu cầu minh bạch. Gói này chưa được gửi tới nhà tuyển dụng.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline, fail-closed resource planner. No Proxmox credentials or mutations."""
+"""Offline resource planner. Invalid records are excluded and reported; no Proxmox credentials or mutations."""
 import argparse
 import copy
 import json
@@ -98,12 +98,17 @@ def excess(state, limits):
                if v['status'] == 'online' and v['ratios'] for k in limits)
 
 
-def plan(nodes, vms, limits):
-    """Deterministic greedy search, each move lowers excess; never certifies failure."""
+def plan(nodes, vms, limits, tainted=frozenset()):
+    """Deterministic greedy search, each move lowers excess; never certifies failure.
+
+    `vms` holds only valid records. A node in `tainted` lost at least one record, so its
+    real load is unknown (the computed value is a lower bound): it may give VMs away but
+    never receives one, because "target stays below threshold" cannot be guaranteed.
+    """
     work = copy.deepcopy(vms)
     moves, moved = [], set()
     for _ in range(len(vms)):
-        current = loads(nodes, work, set(), limits)
+        current = loads(nodes, work, tainted, limits)
         score = excess(current, limits)
         if score <= 1e-12:
             return moves, current, 'balanced'
@@ -114,11 +119,12 @@ def plan(nodes, vms, limits):
                 continue
             for dst, node in sorted(nodes.items()):
                 if dst == src or node['status'] != 'online': continue
+                if not node['valid'] or dst in tainted: continue  # unknown/invalid target capacity
                 # Reserve full incoming guest allocation while source remains present.
                 if current[dst]['ram_bytes_used'] + v['mem_max'] > node['mem_total'] * limits['ram']:
                     continue
                 v['node'] = dst
-                after = loads(nodes, work, set(), limits)
+                after = loads(nodes, work, tainted, limits)
                 v['node'] = src
                 newscore = excess(after, limits)
                 if not after[dst]['overloaded_dimensions'] and newscore < score-1e-12:
@@ -131,8 +137,9 @@ def plan(nodes, vms, limits):
         moved.add(vid)
         moves.append({'vmid': vid, 'from': src, 'to': dst,
                       'incoming_ram_reservation_bytes': vm['mem_max'],
+                      'source_load_is_lower_bound': src in tainted,
                       'target_after': after[dst]})
-    final = loads(nodes, work, set(), limits)
+    final = loads(nodes, work, tainted, limits)
     return moves, final, 'balanced' if excess(final, limits) <= 1e-12 else 'unresolved'
 
 
@@ -143,14 +150,22 @@ def analyze(data, limits=None):
     nodes, vms, tainted, warnings = validate(data)
     before = loads(nodes, vms, tainted, limits)
     report = {'cluster': data.get('cluster'), 'collected_at': data.get('collected_at'),
-              'thresholds': limits, 'warnings': warnings, 'before': before,
-              'plan': [], 'after': before, 'plan_status': 'blocked_invalid_data',
+              'thresholds': limits, 'warnings': warnings,
+              'excluded_records': len({w['record'] for w in warnings}),
+              'before': before, 'plan': [], 'after': before, 'plan_status': 'blocked_invalid_data',
               'resource_plan_complete': False, 'production_ready': False,
               'notes': ['Read-only snapshot estimate, excludes host overhead and future load.',
                         'Verify fresh telemetry, storage, CPU compatibility, network, HA/affinity, locks and migration overhead before execution.']}
-    if not warnings:
-        moves, after, status = plan(nodes, vms, limits)
-        report.update(plan=moves, after=after, plan_status=status, resource_plan_complete=status == 'balanced')
+    # Only block when nothing can be evaluated at all (no valid online node).
+    if any(n['valid'] and n['status'] == 'online' for n in nodes.values()):
+        moves, after, status = plan(nodes, vms, limits, tainted)
+        if warnings:
+            # Never claim "balanced" while records are missing: loads of affected nodes are lower bounds.
+            status = 'partial_plan_with_excluded_records' if status == 'balanced' else 'unresolved_with_excluded_records'
+            report['notes'].append('Invalid records were excluded and are listed in warnings. Nodes with excluded records '
+                                   'show LOWER-BOUND load and are never used as migration targets; re-check them after fixing the data.')
+        report.update(plan=moves, after=after, plan_status=status,
+                      resource_plan_complete=status == 'balanced')
     return report
 
 
@@ -162,7 +177,11 @@ def table(report):
         ratios = r['ratios']
         nums = (f"{ratios['cpu']*100:8.2f} {r['ram_bytes_used']/GIB:10.2f} {ratios['ram']*100:8.2f} {ratios['overcommit']:10.2f}" if ratios else f"{'N/A':>8} {r['ram_bytes_used']/GIB:10.2f} {'N/A':>8} {'N/A':>10}")
         lines.append(f"{name:18} {r['status']:8} {r['cpu_cores_used']:10.3f} {nums} {r['assessment']}")
-    for m in report['plan']: lines.append(f"MOVE VM {m['vmid']}: {m['from']} -> {m['to']}")
+    if report.get('warnings'):
+        lines.append(f"EXCLUDED RECORDS: {report['excluded_records']} (details in warnings/stderr). Nodes marked unknown/lower_bound lack data and are never migration targets.")
+    for m in report['plan']:
+        flag = ' [source load is a lower bound]' if m.get('source_load_is_lower_bound') else ''
+        lines.append(f"MOVE VM {m['vmid']}: {m['from']} -> {m['to']}{flag}")
     if report['plan']:
         lines.append('AFTER (projected): node CPU% RAM% vCPU/core')
         for name, r in report['after'].items():
@@ -191,7 +210,11 @@ def main(argv=None):
         return 2
     for w in report['warnings']: print(f"WARNING {w['record']}: {w['message']}", file=sys.stderr)
     print(json.dumps(report, indent=2, ensure_ascii=False, allow_nan=False) if args.format == 'json' else table(report))
-    return 2 if report['warnings'] else 3 if not report['resource_plan_complete'] else 0
+    status = report['plan_status']
+    if status == 'blocked_invalid_data': return 2
+    if status == 'balanced': return 0
+    if status == 'partial_plan_with_excluded_records': return 4
+    return 3
 
 
 if __name__ == '__main__':
